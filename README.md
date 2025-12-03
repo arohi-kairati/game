@@ -25,4 +25,8 @@ The code is mostly straightforward and uses basic C functions to create a simple
 
 
 CHANGES MADE IN THE MODIFIED VERSION
+added 3 new faetures in the previous game!!
 
+1. i added a score board, which shows the score at top and also when the game is over, it shows on the final screen
+2. i added a difficulty in which speed of the obstacle falling increses with time.
+3. i also added lives for the player (given 3 lives before the game over).
