@@ -2,6 +2,7 @@
 // 1. SCORE board added
 // 2. speed increases per time
 // 3. 3 lives given to the player before game 
+// 4. player loses life when the smiley is missed
 
 #include <stdio.h>
 #include <conio.h>
@@ -13,9 +14,9 @@ int main() {
     srand(time(0));
 
     int x = 1, v = 120, life = 3;              // player position (0 to 2)
-    int step = 0;                        // obstacle vertical movement
+    int step = 0;                        // smiley vertical movement
     int score = 0;
-    int obstaclePos = rand() % 3;   // 0,1,2 lane
+    int smileyPos = rand() % 3;   // 0,1,2 lane
 	
 	while(life > 0)
 	{
@@ -36,11 +37,11 @@ int main() {
 	        system("cls");
 	        
 	        // ---- COLLISION ----
-	        if (step == 10 && x == obstaclePos) {
+	        if (step == 10 && x != smileyPos) {
 	        	life--;
 	            if(life == 0)
 	            {
-	            	printf("\nGAME OVER!\n");
+	            	printf("\nYou Died!!\nGAME OVER!\n");
 	            	break;
 				}
 	        }
@@ -53,13 +54,13 @@ int main() {
 	        for (int i = 0; i < 10; i++) {
 	            if (i == step) {
 	
-	                if (obstaclePos == 0)
+	                if (smileyPos == 0)
 	                    printf("| %c        |\n", 1);
 	
-	                else if (obstaclePos == 1)
+	                else if (smileyPos == 1)
 	                    printf("|     %c    |\n", 1);
 	
-	                else if (obstaclePos == 2)
+	                else if (smileyPos == 2)
 	                    printf("|        %c |\n", 1);
 	
 	            } else {
@@ -86,18 +87,16 @@ int main() {
 	        	score++;
 			}
 	
-	        // Move obstacle down
+	        // Move smiley down
 	        step++;
 	
 	        // Reset when reaches bottom
 	        if (step > 10) {
 	            step = 0;
-	            obstaclePos = rand() % 3; // new lane
+	            smileyPos = rand() % 3; // new lane
 	        }
 		}
 		printf("Final Score: %d\n", score);
-	    //printf("lives left : %d\n", life);
-	    
 	}
     return 0;
 }
