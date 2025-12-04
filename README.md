@@ -28,5 +28,6 @@ CHANGES MADE IN THE MODIFIED VERSION
 added 3 new faetures in the previous game!!
 
 1. i added a score board, which shows the score at top and also when the game is over, it shows on the final screen
-2. i added a difficulty in which speed of the obstacle falling increases with time.
+2. i added a difficulty in which speed of the smiley falling increases with time.
 3. i also added lives for the player (given 3 lives before the game over).
+4. i changed the gaming condition, player will lose a life if he/she misses the falling smiley.
